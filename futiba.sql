@@ -1,17 +1,22 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
 -- Schema Futiba
 -- -----------------------------------------------------
+
 CREATE SCHEMA IF NOT EXISTS `Futiba` DEFAULT CHARACTER SET utf8 ;
+
 USE `Futiba` ;
 
 -- -----------------------------------------------------
 -- Table `Futiba`.`users`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(245) NULL,
@@ -21,20 +26,20 @@ CREATE TABLE IF NOT EXISTS `Futiba`.`users` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `Futiba`.`groups`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`groups` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(245) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `Futiba`.`groups_users`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`groups_users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `users` INT NOT NULL,
@@ -55,10 +60,10 @@ CREATE TABLE IF NOT EXISTS `Futiba`.`groups_users` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `Futiba`.`games`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`games` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `team_a` VARCHAR(245) NULL,
@@ -68,10 +73,10 @@ CREATE TABLE IF NOT EXISTS `Futiba`.`games` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `Futiba`.`guessings`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`guessings` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `result_a` INT NULL,
@@ -101,10 +106,10 @@ CREATE TABLE IF NOT EXISTS `Futiba`.`guessings` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `Futiba`.`comments`
 -- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`comments` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `comment` TEXT NULL,
@@ -127,5 +132,7 @@ ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
+
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

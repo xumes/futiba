@@ -1,4 +1,4 @@
-                
+
 .intro-2 {
   background: url('../img-futiba-club/campo.png')no-repeat center center;
   background-size: cover;
@@ -10,6 +10,32 @@
 
 .navbar:not(.top-nav-collapse) {
   background: transparent !important;
+}
+
+section .container {
+    padding: 80px 10%;
+}
+
+section .container h2 {
+    font-size: 1.3em;
+    padding: 20px 0px;
+}
+
+.container .row .card {
+    margin: 20px;
+}
+
+.btn-deep-orange {
+    width: 100%;
+}
+
+.md-form {
+    margin: 0% 25%;
+}
+
+.btn-unique {
+    margin: 50px 0px;
+    width: 40%;
 }
 
 @media (max-width: 768px) {
@@ -36,7 +62,7 @@ h6 {
       margin-left: 1rem;
   }
 }
-              
+
 
 .navbar-inner {
   min-height: 0px;
