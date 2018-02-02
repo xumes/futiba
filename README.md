@@ -1,5 +1,5 @@
 
-#### Full Stack Academy - Futiba Club
+## Full Stack Academy - Futiba Club
 
 ![Full Stack](https://i.imgur.com/jLsC6sb.png)
 
@@ -8,7 +8,7 @@
 Projeto prático Futiba Club do mini curso do [Dev Pleno](https://www.devpleno.com/fullstackacademy/) - Full Stack Academy.
 
 
-#### Packages
+## Packages
 
 [Express](https://www.npmjs.com/package/express) - Web framework
 
@@ -21,7 +21,7 @@ Projeto prático Futiba Club do mini curso do [Dev Pleno](https://www.devpleno.c
 [Body Parser](https://www.npmjs.com/package/body-parser) - Manipulador de dados dos formulários ( Port, get ... )
 
 
-#### Tools
+## Tools
 
 [Node](https://nodejs.org/en/)
 
@@ -34,3 +34,13 @@ Projeto prático Futiba Club do mini curso do [Dev Pleno](https://www.devpleno.c
 [Git](https://git-scm.com)
 
 [Stack Edit](https://stackedit.io/app)
+
+## Informações importantes:
+
+Este projeto foi entregue como parte do **Fullstack Academy** (edição FutibaClub) promovido pelo **DevPleno** (www.devpleno.com).
+
+**Participante:** Walter Henrique Silva
+
+**Chave do Certificado:** F0A8-6D8D-D325-626E
+
+O certificado pode ser consultado em: https://certificados.devpleno.com
