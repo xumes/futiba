@@ -47,9 +47,9 @@ const init = connection => {
 				const parts = team.split('_')
 
 				const game  = {
-					game_id: parts[1],
-					result_a: req.body[team].a,
-					result_b: req.body[team].b
+					game_id: parseInt(parts[1]),
+					result_a: parseInt(req.body[team].a),
+					result_b: parseInt(req.body[team].b)
 				}
 
 				games.push(game)

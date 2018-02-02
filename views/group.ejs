@@ -126,8 +126,6 @@
                     <p class="alert alert-info row">Você precisa ser aprovado pelo dono do grupo</p>
                 <% } else { %>
 
-                <%= JSON.stringify(games) %>
-
                 <form method="post">
 
                     <table class="table table-striped">
@@ -157,7 +155,7 @@
                                 </td>
 
                                 <td>
-                                    100
+                                    <%= game.score %>
                                 </td>
                             </tr>
                         <% }) %>
