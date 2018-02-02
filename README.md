@@ -37,10 +37,8 @@ Projeto prático Futiba Club do mini curso do [Dev Pleno](https://www.devpleno.c
 
 ## Informações importantes:
 
-Este projeto foi entregue como parte do **Fullstack Academy** (edição FutibaClub) promovido pelo **DevPleno** (www.devpleno.com).
+**Participante :** Walter Henrique
 
-**Participante:** Walter Henrique Silva
+**Chave do Certificado :** F0A8-6D8D-D325-626E
 
-**Chave do Certificado:** F0A8-6D8D-D325-626E
-
-O certificado pode ser consultado em: https://certificados.devpleno.com
+O certificado pode ser consultado em : [certificados.devpleno.com](certificados.devpleno.com)
