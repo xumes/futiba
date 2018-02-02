@@ -40,14 +40,14 @@ const init = connection => {
 
     app.post('/games/results', async(req, res) => {
 
-        const games = []
+        let games = []
 
         Object.keys(req.body).forEach(team => {
 
-				const parts = team.split('_')
+				let parts = team.split('_')
 
-				const game  = {
-					game_id: parseInt(parts[1]),
+				let game  = {
+					game_id: parts[1],
 					result_a: parseInt(req.body[team].a),
 					result_b: parseInt(req.body[team].b)
 				}
@@ -56,15 +56,21 @@ const init = connection => {
 
 		})
 
+        console.log(games)
+
         for(let count = 0; count < games.length; count++){
 
-            const game = games[count]
+            let game = games[count]
 
-            const [guessings] = await connection.execute('select * from guessings where game_id = ?', [
+            console.log(game)
+
+            let [guessings] = await connection.execute('select * from guessings where game_id = ?', [
                 game.game_id
             ])
 
-            const batch = guessings.map(guess => {
+            console.log(guessings)
+
+            let batch = guessings.map(guess => {
 
                 let score = 0
 
