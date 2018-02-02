@@ -3,6 +3,8 @@
 
 ![Full Stack](https://i.imgur.com/jLsC6sb.png)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a39b736b794d41ffb7b586c059db013d)](https://www.codacy.com/app/Sphinxs/Futiba?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sphinxs/Futiba&amp;utm_campaign=Badge_Grade)
+
 Projeto prático Futiba Club do mini curso do [Dev Pleno](https://www.devpleno.com/fullstackacademy/) - Full Stack Academy.
 
 
