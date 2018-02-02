@@ -41,7 +41,7 @@
 
                 <div class="container">
 
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="/">
                         <img src="/img-futiba-club/logo.png" height="30" alt="Futiba Club">
                     </a>
 
@@ -53,32 +53,22 @@
                         <ul class="navbar-nav mr-auto">
 
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Home</a>
+                                <a class="nav-link" href="/">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Grupos</a>
+                                <a class="nav-link" href="/groups">Grupos</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Classificação</a>
                             </li>
 
-                            <li class="nav-item dropdown">
+                            <li class="nav-item">
 
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link" aria-haspopup="true" aria-expanded="false">
                                     Entrar
                                 </a>
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-                                    <a class="dropdown-item" href="#">Action</a>
-
-                                    <a class="dropdown-item" href="#">Another action</a>
-
-                                    <a class="dropdown-item" href="#">Something else</a>
-
-                                </div>
 
                             </li>
 
@@ -99,8 +89,6 @@
                 <div class="row">
 
                     <form class="col" method="post">
-
-                        <p class="h5 text-center mb-4">Entrar</p>
 
                         <div class="md-form">
 
@@ -124,7 +112,7 @@
 
                         <% if (error) { %>
 
-                            <p><%= error %></p>
+                            <p class="alert alert-info"><%= error %></p>
 
                         <% } %>
 

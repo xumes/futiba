@@ -50,7 +50,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
 
-                        <% include ../elements/menu %>
+                        <% include elements/menu %>
 
                     </div> <!-- Navbar Collapse -->
 
@@ -64,70 +64,74 @@
 
             <div class="container">
 
-                <form class="row" method="post" action="/admin/games/results">
+                <form class="row" method="post">
 
                     <div class="md-form">
 
                         <i class="fa fa-user prefix grey-text"></i>
 
-                        <input type="text" class="form-control" name="team_a">
+                        <input type="text" class="form-control" name="name">
 
-                        <label for="orangeForm-name">Time A</label>
-
-                    </div>
-
-                    <div class="md-form">
-
-                        <i class="fa fa-user prefix grey-text"></i>
-
-                        <input type="text" class="form-control" name="team_b">
-
-                        <label for="orangeForm-name">Time B</label>
+                        <label for="orangeForm-name">Nome do grupo</label>
 
                     </div>
 
                     <div class="text-center">
-                        <button class="btn btn-deep-orange">Criar Jogo</button>
+                        <button class="btn btn-deep-orange">Criar grupo</button>
                     </div>
-
-                    <input type="submit" value="Resultados" class="btn btn-success">
 
                 </form> <!-- Form Games -->
 
-                <form action="post">
-                    <table class="table table-striped">
+                <% if (groups.length > 0 ) { %>
 
-                        <thead>
-                            <tr>
-                                <th>#</th>
+                <table class="table table-striped">
 
-                                <th>Jogos</th>
+                    <thead>
+                        <tr>
+                            <!-- <th>Identificação</th> -->
 
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
+                            <th>Status</th>
 
-                        <tbody>
-                        <% games.forEach( game => { %>
-                            <tr>
-                                <th scope="row">
-                                    <%= game.id %>
-                                </th>
+                            <th>Nome</th>
+                        </tr>
+                    </thead>
 
-                                <td>
-                                    <input class="form-control" name="team_<%= game.id %>[a]">
-                                        <%= game.team_a %> Vs <%= game.team_b %>
-                                    <input class="form-control" name="team_<%= game.id %>[b]">
-                                </td>
+                    <tbody>
+                    <% groups.forEach( group => { %>
+                        <tr>
+                            <!-- <th scope="row"><%= group.id %></th> --> <!-- Identificação -->
 
-                                <td><a href="/admin/games/delete/<%= game.id %>">Excluir</a></td>
-                            </tr>
-                        <% }) %>
-                        </tbody>
+                            <td style="text-transform: capitalize;"><%= group.role %></td>
 
-                    </table> <!-- Table Games -->
+                            <td>
+                                <a href="/groups/<%= group.id %>">
+                                    <%= group.name %>
+                                </a>
+                            </td>
 
-                </form>
+                            <td>
+
+                                <% if (group.role === "owner") { %>
+                                <a href="/admin/group/delete/<%= group.id %>">
+                                    Excluir
+                                </a>
+                                <% } %>
+
+                                <% if(!group.role) { %>
+                                <a href="/groups/<%= group.id %>/join">
+                                    Entrar
+                                </a>
+                                <% } %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                    </tbody>
+
+                </table> <!-- Table Games -->
+
+                <% } else { %>
+                    <p class="alert alert-info">Nenhum grupo cadastrado</p>
+                <% } %>
 
             </div> <!-- Container -->
 

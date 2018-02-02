@@ -14,8 +14,10 @@ const account = require('./account')
 
 const admin = require('./admin')
 
+const groups = require('./groups');
 
-// Middleware :
+
+// Middlewares :
 
 app.use(express.static('public'))
 
@@ -54,6 +56,8 @@ const init = async() => {
     app.use('/admin', admin(connection))
 
     app.use(account(connection))
+
+    app.use('/groups', groups(connection))
 
     app.listen(3000, err => {
         if (err)

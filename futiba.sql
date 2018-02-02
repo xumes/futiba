@@ -40,10 +40,12 @@ ENGINE = InnoDB;
 -- Table `Futiba`.`groups_users`
 -- -----------------------------------------------------
 
+/* User_id and group_id was in code as groups_users.users and groups_users.groups */
+
 CREATE TABLE IF NOT EXISTS `Futiba`.`groups_users` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `users` INT NOT NULL,
-  `groups` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `group_id` INT NOT NULL,
   `role` VARCHAR(245) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_groups_users_users_idx` (`users` ASC),

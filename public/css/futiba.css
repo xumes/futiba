@@ -29,8 +29,12 @@ section .container h2 {
     width: 100%;
 }
 
-.md-form {
-    margin: 0% 25%;
+div .md-form {
+    width: 100%;
+}
+
+.contact-futiba {
+    margin: 0% 25% 10% 25%;
 }
 
 .btn-unique {
