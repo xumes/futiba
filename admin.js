@@ -28,6 +28,14 @@ const init = connection => {
 
     })
 
+    app.get('/games/delete/:id', async (req, res) => {
+
+        await connection.execute('delete from games where id = ? limit 1', [req.params.id])
+
+        res.redirect('/admin/games')
+
+    })
+
     app.post('/games', async (req, res) => {
 
         const {team_a, team_b} = req.body
@@ -47,7 +55,7 @@ const init = connection => {
 				let parts = team.split('_')
 
 				let game  = {
-					game_id: parts[1],
+					game_id: parseInt(parts[1]),
 					result_a: parseInt(req.body[team].a),
 					result_b: parseInt(req.body[team].b)
 				}
@@ -56,19 +64,13 @@ const init = connection => {
 
 		})
 
-        console.log(games)
-
         for(let count = 0; count < games.length; count++){
 
             let game = games[count]
 
-            console.log(game)
-
             let [guessings] = await connection.execute('select * from guessings where game_id = ?', [
                 game.game_id
             ])
-
-            console.log(guessings)
 
             let batch = guessings.map(guess => {
 
@@ -88,7 +90,7 @@ const init = connection => {
                             score += 25
                         }
 
-                        if(guess.result_a > guess.result_b && game.result_a > game.result_b) {
+                        if(guess.result_a > guess.result_b && game.result_a > game.result_b){
                             score += 25
                         }
 
@@ -99,21 +101,13 @@ const init = connection => {
                 return connection.execute('update guessings set score = ? where id = ?', [
                     score,
                     guess.id
-                ]) // Update all guessings
+                ])
 
             })
 
             await Promise.all(batch)
 
         }
-
-        res.redirect('/admin/games')
-
-    })
-
-    app.get('/games/delete/:id', async (req, res) => {
-
-        await connection.execute('delete from games where id = ? limit 1', [req.params.id])
 
         res.redirect('/admin/games')
 

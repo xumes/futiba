@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- Table `Futiba`.`groups_users`
 -- -----------------------------------------------------
 
-/* User_id and group_id was in code as groups_users.users and groups_users.groups */
+/* User_id and group_id in code is named as groups_users.users and groups_users.groups */
 
 CREATE TABLE IF NOT EXISTS `Futiba`.`groups_users` (
   `id` INT NOT NULL AUTO_INCREMENT,

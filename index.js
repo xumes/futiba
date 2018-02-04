@@ -3,11 +3,12 @@ const express = require('express')
 
 const session = require('express-session')
 
-const app = express()
-
 const mysql = require('mysql2/promise')
 
 const body = require('body-parser')
+
+
+const app = express()
 
 
 const account = require('./account')
@@ -17,7 +18,7 @@ const admin = require('./admin')
 const groups = require('./groups');
 
 
-// Middlewares :
+// Middlewares
 
 app.use(express.static('public'))
 
@@ -41,10 +42,10 @@ const init = async() => {
         database: 'Futiba'
     })
 
-    app.use((req, res, next) => { // If it's not logged the system stop
+    app.use((req, res, next) => { // Not logged the system stop
 
         if(req.session.user){
-            res.locals.user = req.session.user // Home.ejs -> Entrar != User NAme
+            res.locals.user = req.session.user
         } else {
             res.locals.user = false
         }

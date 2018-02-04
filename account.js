@@ -54,8 +54,6 @@ const init = connection => {
 
     app.post('/new-account', async (req, res) => {
 
-        // console.log(req.body)
-
         const [rows, fields] = await connection.execute('select * from users where email = ?', [req.body.email]) // Prepered Statment
 
         if (rows.length === 0) { // Insert

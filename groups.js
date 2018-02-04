@@ -26,28 +26,12 @@ const init = connection => {
 
     })
 
-    app.post('/', async(req, res) => {
-
-        const [insertedid, insertedfl] = await connection.execute('insert into groups (name) values (?)', [
-            req.body.name
-        ])
-
-        await connection.execute('insert into groups_users (groups, users, role) values (?,?,?)', [
-            insertedid.insertId,
-            req.session.user.id,
-            'owner'
-        ])
-
-        res.redirect('/groups')
-
-    })
-
     app.get('/:id/join', async(req, res) => {
 
         const [ rows, fields ] = await connection.execute('select * from groups_users where users = ? and groups = ?', [
 			req.session.user.id,
 			req.params.id
-		]); // User logged and user id
+		]); // User session and user id
 
         if(rows.length > 0) {
 
@@ -105,7 +89,7 @@ const init = connection => {
 
     // Relation id and user id
 
-    app.get('/:id/pending/:idgu/:op', async(req, res) => { // Approve or not a user in group
+    app.get('/:id/pending/:idgu/:op', async(req, res) => { // Approve or not a user in a group
 
         const [ group ]  = await connection.execute('select groups.*, groups_users.role from groups left join groups_users on groups_users.groups = groups.id and groups_users.users = ? where groups.id = ?', [
 			req.session.user.id,
@@ -170,6 +154,22 @@ const init = connection => {
 		res.redirect('/groups/' + req.params.id);
 
 	});
+
+    app.post('/', async(req, res) => {
+
+        const [insertedid, insertedfl] = await connection.execute('insert into groups (name) values (?)', [
+            req.body.name
+        ])
+
+        await connection.execute('insert into groups_users (groups, users, role) values (?,?,?)', [
+            insertedid.insertId,
+            req.session.user.id,
+            'owner'
+        ])
+
+        res.redirect('/groups')
+
+    })
 
     return app
 
