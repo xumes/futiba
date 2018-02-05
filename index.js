@@ -17,6 +17,8 @@ const admin = require('./admin')
 
 const groups = require('./groups');
 
+const classification = require('./classification');
+
 
 // Middlewares
 
@@ -59,6 +61,9 @@ const init = async() => {
     app.use(account(connection))
 
     app.use('/groups', groups(connection))
+
+    app.use(classification(connection))
+
 
     app.listen(3000, err => {
         if (err)

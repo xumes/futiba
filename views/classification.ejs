@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+
+<html lang="en" class="full-height">
+
+    <head>
+
+        <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/Tlyy9su.png"/>
+
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <title>Futiba Club</title>
+
+        <!-- Font Awesome -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Bootstrap -->
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Material Design Bootstrap -->
+
+        <link href="/css/mdb.min.css" rel="stylesheet">
+
+        <!-- Custom Styles -->
+
+        <link href="/css/style.css" rel="stylesheet">
+
+        <link href="/css/futiba.css" rel="stylesheet">
+
+    </head>
+
+    <body style="background: #5ab342;">
+
+        <section >
+
+            <div class="container">
+
+                <h2>Classificação - <a href="/"style="color: #fff;">Home</a></h2>
+
+                <% if(top) { %>
+
+                <table class="table table-striped">
+
+                    <thead>
+
+                        <tr>
+                            <th>Nome</th>
+
+                            <th>Pontuação</th>
+                        </tr>
+
+                    </thead> <!-- Table Head -->
+
+                    <tbody>
+
+                        <% top.forEach(item => { %>
+
+                        <tr>
+
+                            <td><%= item.name %></td>
+
+                            <td><%= item.score %></td>
+                        </tr>
+
+                        <% }) %>
+
+                    </tbody> <!-- Table Body -->
+
+                </table> <!-- Table -->
+
+                <% } else { %>
+
+                    <p>Não há nenhum jogo ou aposta em andamento</p>
+
+                <% } %>
+
+            </div> <!-- Container -->
+
+        </section> <!-- Section -->
+
+    <% include elements/footer %>

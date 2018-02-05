@@ -1,7 +1,7 @@
 
 ## Full Stack Academy - Futiba Club
 
-![Full Stack](https://i.imgur.com/jLsC6sb.png)
+![Full Stack](https://i.imgur.com/z8L6Vxw.png)
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a39b736b794d41ffb7b586c059db013d)](https://www.codacy.com/app/Sphinxs/Futiba?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sphinxs/Futiba&amp;utm_campaign=Badge_Grade)
 
