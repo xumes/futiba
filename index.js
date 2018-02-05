@@ -35,6 +35,13 @@ app.use(session({
 app.set('view engine', 'ejs')
 
 
+// Open Shift
+
+let server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+
+let server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+
 const init = async() => {
 
     const connection = await mysql.createConnection({
@@ -65,12 +72,16 @@ const init = async() => {
     app.use(classification(connection))
 
 
-    app.listen(3000, err => {
+    /* app.listen(3000, err => {
         if (err)
             console.log('\n\033[31m➜\033[37m [ Server ] \033[31mError\033[37m\n')
         else
             console.log('\n\033[31m➜\033[37m [ Server ] \033[32mOnline\033[37m\n')
-    })
+    }) */
+
+    app.listen(server_port, server_ip_address, function () {
+        console.log( "Listening on " + server_ip_address + ", port " + server_port )
+    });
 
 }
 
