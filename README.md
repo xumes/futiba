@@ -41,4 +41,4 @@ O fluxo da aplicação : o usuário cria uma conta e faz o login, cria ou entra 
 
 **Chave do certificado :** F0A8-6D8D-D325-626E
 
-O certificado pode ser consultado em : [certificados.devpleno.com](certificados.devpleno.com)
+O certificado pode ser consultado em : [certificados.devpleno.com](http://certificados.devpleno.com)
