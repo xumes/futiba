@@ -21,23 +21,7 @@ O fluxo da aplicação : o usuário cria uma conta e faz o login, cria ou entra 
 
 [Body Parser](https://www.npmjs.com/package/body-parser) - Manipulador de dados dos formulários
 
-
-## Tools
-
-[Node](https://nodejs.org/en/)
-
-[Npm](https://www.npmjs.com)
-
-[Atom](https://atom.io)
-
-[Mysql](https://www.mysql.com)
-
-[Git](https://git-scm.com)
-
-
-## Informações importantes:
-
-**Participante :** Walter Henrique
+## Info
 
 **Chave do certificado :** F0A8-6D8D-D325-626E
 
